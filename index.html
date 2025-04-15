@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #fff5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Contenedor principal */
+        .card {
+            display: flex;
+            width: 90%;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        /* Sección izquierda (Mensaje + Dibujo) */
+        .left-section {
+            flex: 1;
+            padding: 30px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .left-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .left-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .drawing {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sección derecha (Video) */
+        .right-section {
+            flex: 1;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-message {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Efecto de latido para el texto */
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.05); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .heartbeat {
+            animation: heartbeat 2s infinite;
+            color: #ff1493;
+        }
+
+        /* Responsivo para móviles */
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+                height: auto;
+            }
+            .left-section, .right-section {
+                flex: none;
+                width: 100%;
+            }
+            .right-section {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- Sección izquierda: Mensaje y dibujo -->
+        <div class="left-section">
+            <h1 class="heartbeat">¡Feliz Cumpleaños, <span id="name">Mi persona favorita</span>!</h1>
+            <p>Este día es tan especial como tú. Sonrie y disfruta al maximo. 🎉 </p>
+            
+            <!-- Reemplaza "tu_dibujo.jpg" con la ruta de tu imagen -->
+            <img src="tu_dibujo.jpg" alt="Dibujo para ti" class="drawing">
+            
+            <p>Te quiero mucho...❤️</p>
+        </div>
+
+        <!-- Sección derecha: Video -->
+        <div class="right-section">
+            <!-- Reemplaza "video_mensaje.mp4" con tu video -->
+            <video class="video-message" controls autoplay loop>
+                <source src="video_mensaje.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+    </div>
+</body>
+</html>
